@@ -141,9 +141,14 @@ Authenticate `user`, with optional `info`.
 Strategies should call this method to successfully authenticate a
 user. `user` should be an object supplied by the application after it
 has been given an opportunity to verify credentials.  `info` is an
-optional argument containing additional user information. This is
-useful for third-party authentication strategies to pass profile
-details.
+optional object containing additional authentication information, or a string
+containing a success message. The object form is useful for third-party
+authentication strategies to pass profile details.
+
+```javascript
+strategy.success(user, { scope: 'read' });
+strategy.success(user, 'Welcome!');
+```
 
 **Kind**: instance method of [Strategy](#Strategy)
 **API**: public
@@ -151,7 +156,7 @@ details.
 | Param | Type |
 | --- | --- |
 | user | object |
-| info | object |
+| info | object\|string |
 
 #### strategy.fail(challenge, status)
 

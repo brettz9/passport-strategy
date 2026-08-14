@@ -1,5 +1,9 @@
 # CHANGES for @passport-next/passport-strategy
 
+## 2.4.0
+
+- fix(types): allow `EnhancedStrategy#success` info to be an `AuthInfo` object or string
+
 ## 2.3.0
 
 - feat: allow `fail` to accept no arguments, number as first argument without second argument, or string|AuthInfo as first argument with optional number status as second

@@ -20,6 +20,12 @@ describe('EnhancedStrategy', function () {
     }).to.throw(Error, 'EnhancedStrategy#success must be overridden by subclass');
   });
 
+  it('success should accept string info', function () {
+    expect(function () {
+      strategy.success({}, 'Welcome!');
+    }).to.throw(Error, 'EnhancedStrategy#success must be overridden by subclass');
+  });
+
   it('fail should throw error', function () {
     expect(function () {
       strategy.fail('challenge', 200);
